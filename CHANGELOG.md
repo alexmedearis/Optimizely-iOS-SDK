@@ -1,5 +1,9 @@
 # Optimizely-iOS-SDK CHANGELOG
 
+## 0.4.33
+
+- Remove AdSupport from podspec - no longer necessary.
+
 ## 0.4.32
 
 April 7, 2014
