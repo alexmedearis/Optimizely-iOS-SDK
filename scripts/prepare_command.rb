@@ -45,8 +45,6 @@ phases.each do |phase|
    #if a project has the old version, just update it, save and exit
   if phase.shell_script == OLD_SHELL_SCRIPT
     phase.shell_script = SHELL_SCRIPT
-    project.save()
-    abort
   end 
 end
 
