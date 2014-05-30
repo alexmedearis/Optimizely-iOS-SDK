@@ -22,7 +22,7 @@ if xcodeproj_path
   xcodeproj_path = "../../" + xcodeproj_path
   
   # xcodeproj extension may or may not be specified
-  if split('.').last != 'xcodeproj'
+  if xcodeproj_path.split('.').last != 'xcodeproj'
     xcodeproj_path = xcodeproj_path + '.xcodeproj'
   end
   
