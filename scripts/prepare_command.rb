@@ -8,11 +8,11 @@ SHELL_SCRIPT = "python \"$PODS_ROOT/Optimizely-iOS-SDK/scripts/OptimizelyPrepare
 # This was a prior version of the referencing the script and will be deprecated
 OLD_SHELL_SCRIPT = "python \"$SRCROOT/Pods/Optimizely-iOS-SDK/scripts/OptimizelyPrepareNibs.py\""
 
-
 # Find main project file by looking in the Podfile declaration
 xcodeproj_path = begin
   # Check capitalized and non-capitalized podfile variants
   file_path = File.file?('../../Podfile') ? '../../Podfile' : '../../podfile'
+  print file_path
   print Pod::Command::IPC::Podfile::Pod::Podfile.from_file('../../podfile').to_hash
   Pod::Command::IPC::Podfile::Pod::Podfile.from_file(file_path).to_hash["target_definitions"].first["user_project_path"]
 rescue
