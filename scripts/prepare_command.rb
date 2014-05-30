@@ -13,7 +13,7 @@ OLD_SHELL_SCRIPT = "python \"$SRCROOT/Pods/Optimizely-iOS-SDK/scripts/Optimizely
 xcodeproj_path = begin
   # Check capitalized and non-capitalized podfile variants
   file_path = File.file?('../../Podfile') ? '../../Podfile' : '../../podfile'
-  print Pod::Command::IPC::Podfile::Pod::Podfile.from_file(file_path)
+  print Pod::Command::IPC::Podfile::Pod::Podfile.from_file('../../podfile')
   Pod::Command::IPC::Podfile::Pod::Podfile.from_file(file_path).to_hash["target_definitions"].first["user_project_path"]
 rescue
   nil 
