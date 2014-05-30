@@ -20,14 +20,19 @@ end
 if xcodeproj_path
   # If declared in Podfile, prepend two directories up so that project path is relative to this script
   xcodeproj_path = "../../" + xcodeproj_path
+  
   # xcodeproj extension may or may not be specified
   if split('.').last != 'xcodeproj'
     xcodeproj_path = xcodeproj_path + '.xcodeproj'
   end
+  
+  # Verify file is valid
+  if(!File.file?(xcodeproj_path))
+    xcodeproj_path = nil
+  end
 end
 
-
-else
+if !xcodeproj_path
   # Otherwise, fallback on a simple directory listing
   xcodeproj_path = Dir['../../*'].detect do |fname|
       fname =~ /.*\.xcodeproj$/
