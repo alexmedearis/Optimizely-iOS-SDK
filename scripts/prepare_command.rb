@@ -45,6 +45,8 @@ phases.each do |phase|
    #if a project has the old version, just update it, save and exit
   if phase.shell_script == OLD_SHELL_SCRIPT
     phase.shell_script = SHELL_SCRIPT
+    install_build_phase = false
+    project.save()
   end 
 end
 
@@ -58,3 +60,4 @@ if install_build_phase
   phases.unshift popped_phase
   project.save()
 end
+
