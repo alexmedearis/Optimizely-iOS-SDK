@@ -28,7 +28,7 @@ if xcodeproj_path
   
   print xcodeproj_path
   # Verify file is valid
-  if(!File.file?(xcodeproj_path))
+  if(!File.exists?(xcodeproj_path))
     xcodeproj_path = nil
   end
 end
