@@ -26,6 +26,7 @@ if xcodeproj_path
     xcodeproj_path = xcodeproj_path + '.xcodeproj'
   end
   
+  print xcodeproj_path
   # Verify file is valid
   if(!File.file?(xcodeproj_path))
     xcodeproj_path = nil
