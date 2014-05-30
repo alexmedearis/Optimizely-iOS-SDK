@@ -13,7 +13,7 @@ xcodeproj_path = begin
   # Check capitalized and non-capitalized podfile variants
   file_path = File.file?('../../Podfile') ? '../../Podfile' : '../../podfile'
   print file_path
-  print Pod::Command::IPC::Podfile::Pod::Podfile.from_file('../../podfile').to_hash
+  print Pod::Command::IPC::Podfile::Pod::Podfile.from_file('../../Podfile').to_hash
   Pod::Command::IPC::Podfile::Pod::Podfile.from_file(file_path).to_hash["target_definitions"].first["user_project_path"]
 rescue
   nil 
